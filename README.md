@@ -32,5 +32,5 @@ A lightweight desktop application that converts numbers between different numera
    ```
 3. Run the application:
    ```bash
-   python main.py
+   python draft.py
    ```
