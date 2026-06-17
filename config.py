@@ -70,15 +70,47 @@ STATIC_PAGES_DATA = {
             ('Восьмеричная: (0-7)', COLOR_LIME, FONT_MEDIUM, 0.3),
             ('Десятичная: (0-9)', COLOR_LIME, FONT_MEDIUM, 0.4),
             ('Шестнадцатеричная: (0-9)\n(A, B, C, D, E, F)', COLOR_LIME, FONT_MEDIUM, 0.52),
-            ('Число, которое ты вводишь, и которое получаешь', COLOR_WHITE, FONT_SMALL, 0.65),
-            ('должны относиться к одной из этих систем', COLOR_WHITE, FONT_SMALL, 0.7),
-            ('а при дешифровке с шагом равным 5', COLOR_WHITE, FONT_SMALL, 0.75),
-            ('«Ж» превращается в «В»', COLOR_WHITE, FONT_SMALL, 0.8)
+            ('Число, которое ты вводишь, и которое получаешь', COLOR_WHITE, FONT_SMALL, 0.7),
+            ('должны относиться к одной из этих систем', COLOR_WHITE, FONT_SMALL, 0.75)
         ],
         'buttons': [
-            ('Выйти', 'exit', 0.35),
-            ('Отлично', 'start', 0.65)
+            ('Отлично', 'start', 0.5)
         ]
+    }
+}
+
+CHOICE_PAGES_DATA = {
+    'FromWherePage': {
+        'question': 'Из какой системы\nпереводим число?',
+        'boxes': [
+            ('2', '2', 0.25),
+            ('8', '8', 0.45),
+            ('10', '10', 0.65),
+            ('16', '16', 0.85)
+        ],
+        'default_value': '10',
+        'buttons': [
+            ('Назад', 'rules', 0.35),
+            ('Далее', 'to_where', 0.65)
+        ],
+        'back_page': 'RulesPage',
+        'next_page': 'ToWherePage'
+    },
+    'ToWherePage': {
+        'question': 'В какую систему\nпереводим число?',
+        'boxes': [
+            ('2', '2', 0.25),
+            ('8', '8', 0.45),
+            ('10', '10', 0.65),
+            ('16', '16', 0.85)
+        ],
+        'default_value': '2',
+        'buttons': [
+            ('Назад', 'from_where', 0.35),
+            ('Далее', 'user_input', 0.65)
+        ],
+        'back_page': 'FromWherePage',
+        'next_page': 'InputPage'
     }
 }
 
@@ -102,4 +134,15 @@ ACTIVE_MESSAGES = {
         'Ты это, заходи, если что...',
         'Надеюсь, еще увидимся!'
     ]
+}
+
+ERROR_MESSAGES = {
+    'same_base': 'Выбраны одинаковые системы счисления',
+    'empty': 'В поле пусто',
+    'not_digit': 'Нужно ввести именно число',
+    'too_small': 'Шаг не может быть меньше 1',
+    'too_big': 'Шаг не может быть больше 33',
+    'too_many': 'Слишком большой текст',
+    'only_rus': 'Не допускаются английские буквы',
+    'only_eng': 'Не допускаются русские буквы'
 }
