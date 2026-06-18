@@ -18,7 +18,7 @@ BOX_PARAMS = {
 }
 
 ENTRY_PARAMS = {
-    "width": 100,
+    "width": 300,
     "height": 30,
     "border_width": 0,
     "corner_radius": 40,
@@ -47,6 +47,16 @@ BTN_PARAMS = {
     "font": FONT_SMALL
 }
 
+COPY_BTN_PARAMS = {
+    "width": 200,
+    "height": 30,
+    "corner_radius": 15,
+    "fg_color": COLOR_WHITE,
+    "hover_color": COLOR_LIME,
+    "text_color": COLOR_BLACK,
+    "font": FONT_SMALL
+}
+
 STATIC_PAGES_DATA = {
     'GreetingsPage': {
         'labels': [
@@ -59,19 +69,19 @@ STATIC_PAGES_DATA = {
         ],
         'buttons': [
             ('Выйти', 'exit', 0.35),
-            ('Вперёд!', 'rules', 0.65)
+            ('Вперёд!', 'next', 0.65),
         ]
     },
     'RulesPage': {
         'labels': [
-            ('Систем счисления существует множество', COLOR_WHITE, FONT_SMALL, 0.05),
-            ('но здесь используются 4 основные:', COLOR_WHITE, FONT_SMALL, 0.1),
-            ('Двоичная: (0, 1)', COLOR_LIME, FONT_MEDIUM, 0.2),
-            ('Восьмеричная: (0-7)', COLOR_LIME, FONT_MEDIUM, 0.3),
-            ('Десятичная: (0-9)', COLOR_LIME, FONT_MEDIUM, 0.4),
-            ('Шестнадцатеричная: (0-9)\n(A, B, C, D, E, F)', COLOR_LIME, FONT_MEDIUM, 0.52),
-            ('Число, которое ты вводишь, и которое получаешь', COLOR_WHITE, FONT_SMALL, 0.7),
-            ('должны относиться к одной из этих систем', COLOR_WHITE, FONT_SMALL, 0.75)
+            ('Систем счисления существует множество', COLOR_WHITE, FONT_SMALL, 0.1),
+            ('но здесь используются 4 основные:', COLOR_WHITE, FONT_SMALL, 0.15),
+            ('Двоичная: (0, 1)', COLOR_LIME, FONT_MEDIUM, 0.25),
+            ('Восьмеричная: (0-7)', COLOR_LIME, FONT_MEDIUM, 0.35),
+            ('Десятичная: (0-9)', COLOR_LIME, FONT_MEDIUM, 0.45),
+            ('Шестнадцатеричная: (0-9)\n(A, B, C, D, E, F)', COLOR_LIME, FONT_MEDIUM, 0.57),
+            ('Число, которое ты вводишь, и которое получаешь', COLOR_WHITE, FONT_SMALL, 0.72),
+            ('должны относиться к одной из этих систем', COLOR_WHITE, FONT_SMALL, 0.77)
         ],
         'buttons': [
             ('Отлично', 'start', 0.5)
@@ -90,8 +100,8 @@ CHOICE_PAGES_DATA = {
         ],
         'default_value': '10',
         'buttons': [
-            ('Назад', 'rules', 0.35),
-            ('Далее', 'to_where', 0.65)
+            ('Назад', 'back', 0.35),
+            ('Далее', 'next', 0.65)
         ],
         'back_page': 'RulesPage',
         'next_page': 'ToWherePage'
@@ -106,8 +116,8 @@ CHOICE_PAGES_DATA = {
         ],
         'default_value': '2',
         'buttons': [
-            ('Назад', 'from_where', 0.35),
-            ('Далее', 'user_input', 0.65)
+            ('Назад', 'back', 0.35),
+            ('Далее', 'next', 0.65)
         ],
         'back_page': 'FromWherePage',
         'next_page': 'InputPage'
@@ -139,10 +149,9 @@ ACTIVE_MESSAGES = {
 ERROR_MESSAGES = {
     'same_base': 'Выбраны одинаковые системы счисления',
     'empty': 'В поле пусто',
-    'not_digit': 'Нужно ввести именно число',
-    'too_small': 'Шаг не может быть меньше 1',
-    'too_big': 'Шаг не может быть больше 33',
-    'too_many': 'Слишком большой текст',
-    'only_rus': 'Не допускаются английские буквы',
-    'only_eng': 'Не допускаются русские буквы'
+    'too_big': 'Слишком большое значение',
+    'wrong_2': 'В двоичной системе допускаются только цифры "0" и "1"',
+    'wrong_8': 'В восьмеричной системе допускаются только цифры от 0 до 7 включительно',
+    'wrong_10': 'В десятичной системе допускаются только цифры',
+    'wrong_16': 'В шестнадцатеричной системе допускаются только все цифры и буквы "ABCDEF"'
 }
