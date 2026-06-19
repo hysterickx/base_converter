@@ -173,7 +173,7 @@ class InputPage(ctk.CTkFrame):
             )
             self.wait_window(error_message)
             self.entry.delete(0, 'end')
-            self.entry.focus()
+            self.get_focus()
             return
 
         self.controller.transfer_final_info(
@@ -251,9 +251,12 @@ class FinalPage(ctk.CTkFrame):
             button.place(relx=relx, rely=rely, anchor='c')
 
     def get_result(self, user_input, result):
+        input_label = self.labels['user_input_label']
+        result_label = self.labels['result_label']
         self.result = result
-        self.labels['user_input_label'].configure(text=f'Изначальное число:\n{user_input}')
-        self.labels['result_label'].configure(text=f'Результат конвертации:\n{result}')
+
+        input_label.configure(text=f'Изначальное число:\n{user_input}')
+        result_label.configure(text=f'Результат конвертации:\n{result}')
 
 
 class MessagePage(ctk.CTkFrame):
